@@ -40,6 +40,8 @@ INT_PTR CALLBACK DlgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		EndDialog(hwnd, 0);
 		return TRUE;
 	case WM_INITDIALOG:
+		SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1)));
+		SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1)));
 		CreateMutex(0, FALSE, TEXT("{B8A2C367-10FE-494d-A869-841B2AF972E0}"));
 		SendMessage(hProgress, PBM_SETSTEP, 1, 0);
 		hMain = CreateThread(NULL, 0, MainThread, 0, CREATE_SUSPENDED, NULL);
