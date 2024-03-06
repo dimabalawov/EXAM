@@ -1,0 +1,10 @@
+zero
+number
+bool
+sheep
+sheep
+yetti
+tree
+van
+cartoon
+van
